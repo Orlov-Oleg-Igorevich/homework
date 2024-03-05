@@ -24,8 +24,8 @@ class Student:
     def __str__(self):
         return (f"Имя: {self.name}\nФамилия: {self.surname}\n"
                 f"Средняя оценка за домашние задания: {self.avg()}\n"
-                f"Курсы в процессе изучения: {self.courses_in_progress}\n"
-                f"Завершенные курсы: {self.finished_course}")
+                f"Курсы в процессе изучения: {", ".join(self.courses_in_progress)}\n"
+                f"Завершенные курсы: {", ".join(self.finished_course)}")
     
     def avg(self):
         return (round(sum(sum(i) for i in self.grades.values())/
